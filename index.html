@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techily Fly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&amp;family=Satisfy&amp;family=Yesteryear&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles.html">
+    <!-- Correct Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <!-- Fluid cursor -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="goo" version="1.1" width="100%">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
+                    result="goo"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+    <div id="cursor"></div>
+    <!-- End of Fluid cursor-->
+    <div class="background-decoration">
+        <div class="dots"></div>
+        <div class="lines"></div>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="camera camera-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <!-- <header>
+        <nav>
+            <div class="container-header">
+                <div class="logo">
+                    <img src="Icon3.png" alt="Techily Fly Logo" class="logo-img">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#work-section">Work</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <button class="get-started-btn"><a href="https://calendly.com/techilyfly">Get Started</a></button>
+            </div>
+        </nav>
+    </header> -->
+
+    <header>
+    <nav>
+        <div class="container-header">
+            <div class="logo">
+                <img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/63b3edb6768073d9d26513b3/0x0.png" alt="Techily Fly Logo" class="logo-img">
+            </div>
+
+            <button class="hamburger" id="hamburger">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#home">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work-section">Work</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="mobile-btn">
+                    <a href="https://calendly.com/techilyfly" class="get-started-btn" target="_blank">Get Started</a>
+                </li>
+            </ul>
+
+            <button class="get-started-btn desktop-btn">
+                <a href="https://calendly.com/techilyfly" target="_blank">Get Started</a>
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+    <main class="container">
+
+        <!-- <div class="video-container">
+            <video autoplay loop muted playsinline id="promo-video" controls>
+                <source src="Website%20Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div> -->
+
+        <div class="video-container">
+    <iframe id="promo-video"
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/zVpXHSSgeq4?autoplay=1&mute=1&loop=1&playlist=zVpXHSSgeq4&controls=1&playsinline=1"
+        title="Promo Video"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+</div>
+
+        <!-- <h1>
+            <span class="gradient-text">"Content that Sells and Scales"</span><br>
+        </h1> -->
+        <!-- <div class="underline"></div> -->
+        <a class="book-now-btn" href="https://calendly.com/techilyfly" target="_blank">Book a Call</a>
+
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Content Creation</h3>
+                    <div class="service-item">
+                        <h4>Video Editing</h4>
+                        <p>"Your videos will stand out with smooth, engaging edits—no more spending hours trying to
+                            perfect them yourself."</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Video Shooting</h4>
+                        <p>"Get stunning, high-quality visuals without the headache of managing equipment or a crew."
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Graphic Designing</h4>
+                        <p>"Stand out from the crowd with eye-catching YouTube thumbnails and visuals that boost
+                            clicks."</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Content Strategy</h3>
+                    <div class="service-item">
+                        <h4>Content Planning</h4>
+                        <p>"Stay ahead with a clear, actionable plan that takes the guesswork out of what to create
+                            next."</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Content Management</h4>
+                        <p>"Your content will always be organized, on time, and stress-free—no more juggling platforms
+                            or schedules."</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Scriptwriting</h4>
+                        <p>"Enjoy ready-to-go scripts that grab attention and save you time brainstorming ideas."</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Marketing & Distribution</h3>
+                    <div class="service-item">
+                        <h4>Content Distribution</h4>
+                        <p>"Your content will reach the right audience at the right time, saving you the hassle of
+                            figuring out where and how to post."</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Social Media Growth</h4>
+                        <p>"Watch your social media grow while you focus on running your business—we handle the heavy
+                            lifting."</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Audience Conversion</h4>
+                        <p>"Turn followers into loyal customers with content that drives results, without wasting time
+                            on trial-and-error"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose Techily Fly?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Monetize Your Audience</h3>
+                    <p>Turn your followers into paying customers and grow your revenue.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Efficient Management</h3>
+                    <p>Grow your business while we handle everything - from planning to posting.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Stand Out Instantly</h3>
+                    <p>Get high-quality videos, eye-catching thumbnails and engaging scripts that grab attention.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Quick and Reliable</h3>
+                    <p>Enjoy fast turnarounds and smooth revisions, so your content is always on point.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Work With Experts</h3>
+                    <p>Your content is in the hands of specialists with 3+ years of experience individually in their
+                        craft.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Customised Services</h3>
+                    <p>Content solutions tailored to your goals, designed to match your vision and deliver results.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="work-carousel" id="work-section">
+            <h2>Our Work</h2>
+            <div class="carousel-container">
+                <div class="carousel-nav prev">&#10094;</div>
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/FF1jFC91pj4"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/JaCAoYOrgZo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/_VPtCyKtajE"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/0iJYNG0ouRI"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-item">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/SIUpDnZD1yI"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="carousel-nav next">&#10095;</div>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel-nav prev2">&#10094;</div>
+                    <div class="carousel-track2">
+                        <div class="carousel-item">
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/B__a1BUIe40"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe width="100%" height="400"
+                                src="https://www.youtube.com/embed/ZC2_HMVdDJc?si=FtigaVyfabe3gnHt" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe width="100%" height="400"
+                                src="https://www.youtube.com/embed/SPVP9C7-aMg?si=lFpbxFU6vlJlel31" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/ZFRYBhQUh7k"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe width="100%" height="400"
+                                src="https://www.youtube.com/embed/yXDvSlKw7bI?si=kgSORCDbQq8V22Bc" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-nav next2">&#10095;</div>
+                </div>
+        </section>
+
+        <!-- <section class="shorts-section">
+            <h2>Our Shorts</h2>
+            <div class="video-wrapper">
+                <video width="212" height="378" controls muted loop class="fade-in">
+                    <source src="videos/Bhakti%20Yoga%20Promotion%201.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video width="212" height="378" controls muted loop class="fade-in">
+                    <source src="videos/New%20year%20rewind%202.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video width="212" height="378" controls muted loop class="fade-in">
+                    <source src="videos/10.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video width="212" height="378" controls muted loop class="fade-in">
+                    <source src="videos/Urban%20Nomads%20Cinematics.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video width="212" height="378" controls muted loop class="fade-in">
+                    <source src="videos/Yoga%20Promotion%20Reel.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="empty"></div>
+
+            <div>
+                <a class="book-now-btn" href="featured.html">View More</a>
+            </div>
+            <div class="empty"></div>
+
+        </section> -->
+
+        <section class="shorts-section">
+    <h2>Our Shorts</h2>
+    <div class="video-wrapper">
+        <iframe width="212" height="378" src="https://www.youtube.com/embed/05EWoQDhlFk" 
+            frameborder="0" allowfullscreen class="fade-in"></iframe>
+        <iframe width="212" height="378" src="https://www.youtube.com/embed/D1uP7O_LYOA" 
+            frameborder="0" allowfullscreen class="fade-in"></iframe>
+        <iframe width="212" height="378" src="https://www.youtube.com/embed/wD5nNmXCKe0" 
+            frameborder="0" allowfullscreen class="fade-in"></iframe>
+        <iframe width="212" height="378" src="https://www.youtube.com/embed/Z9qELP8SziM" 
+            frameborder="0" allowfullscreen class="fade-in"></iframe>
+        <iframe width="212" height="378" src="https://www.youtube.com/embed/hygepqpjeD4" 
+            frameborder="0" allowfullscreen class="fade-in"></iframe>
+    </div>
+    <div class="empty"></div>
+
+    <div>
+        <a class="book-now-btn" href="https://www.youtube.com/@techilyflybyig/featured" target="_blank">View More</a>
+    </div>
+    <div class="empty"></div>
+</section>
+
+
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="rolling-track">
+                <div class="rolling-card">
+                    <h3>Abhishek</h3>
+                    <p class="role">Founder of JustPrem Sangha</p>
+                    <p class="quote">"Working with Techily Fly has been amazing! Their young, passionate team has helped
+                        me with several projects, and I’m so grateful for their support in helping me grow my own
+                        company too. Thanks, Techily Fly!"</p>
+                </div>
+                <div class="rolling-card">
+                    <h3>Harry Ranveer</h3>
+                    <p class="role">Founder of Videopreneur</p>
+                    <p class="quote">"Mradul Sharma has been an exceptional teammate, treating our work like his own.
+                        His adaptability, reliability, and dedication have exceeded all expectations, making him someone
+                        I trust completely. If you’re looking for someone who consistently delivers and goes the extra
+                        mile, His team is the one."</p>
+                </div>
+                <div class="rolling-card">
+                    <h3>Vir</h3>
+                    <p class="role">Founder of Leap Media</p>
+                    <p class="quote">"Mradul and team is amazing to work with! He gets the job done on time, understands
+                        exactly what you need in the first go, and keeps things super smooth with no back-and-forth
+                        hassle. Plus, he's super helpful and always goes the extra mile!"</p>
+                </div>
+                <div class="rolling-card">
+                    <h3>Ritchie</h3>
+                    <p class="role">Founder of Kresco</p>
+                    <p class="quote">"Techily Fly did an amazing job editing our video and creating something truly
+                        beautiful. They’re super friendly, talented, and a pleasure to work with. Highly recommend!"</p>
+                </div>
+                <!-- Duplicate set for infinite scroll -->
+                <div class="rolling-card">
+                    <h3>Abhishek</h3>
+                    <p class="role">Founder of JustPrem Sangha</p>
+                    <p class="quote">"Working with Techily Fly has been amazing! Their young, passionate team has helped
+                        me with several projects, and I’m so grateful for their support in helping me grow my own
+                        company too. Thanks, Techily Fly!"</p>
+                </div>
+                <div class="rolling-card">
+                    <h3>Harry Ranveer</h3>
+                    <p class="role">Founder of Videopreneur</p>
+                    <p class="quote">"Mradul Sharma has been an exceptional teammate, treating our work like his own.
+                        His adaptability, reliability, and dedication have exceeded all expectations, making him someone
+                        I trust completely. If you’re looking for someone who consistently delivers and goes the extra
+                        mile, His team is the one."</p>
+                </div>
+                <div class="rolling-card">
+                    <h3>Vir</h3>
+                    <p class="role">Founder of Leap Media</p>
+                    <p class="quote">"Mradul and team is amazing to work with! He gets the job done on time, understands
+                        exactly what you need in the first go, and keeps things super smooth with no back-and-forth
+                        hassle. Plus, he's super helpful and always goes the extra mile!"</p>
+                </div>
+                <div class="rolling-card">
+                    <h3>Ritchie</h3>
+                    <p class="role">Founder of Kresco</p>
+                    <p class="quote">"Techily Fly did an amazing job editing our video and creating something truly
+                        beautiful. They’re super friendly, talented, and a pleasure to work with. Highly recommend!"</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">What services does Techily Fly offer?</button>
+      <div class="faq-answer">
+        <p>We offer storytelling, graphic design, video editing, motion graphics, sound design, VFX, and generative AI-based content creation.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How can I contact you for a project?</button>
+      <div class="faq-answer">
+        <p>You can use the contact form on our site or WhatsApp us at <strong>+91-8825164657</strong>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Do you provide custom packages?</button>
+      <div class="faq-answer">
+        <p>Yes, based on your needs, we offer tailored solutions. Book a free consultation through our Get Started button.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Where are you located?</button>
+      <div class="faq-answer">
+        <p>We're based in India but work globally with brands and creators across the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <footer id="contact">
+            <h2 class="section-title">Connect with Us</h2>
+            <div class="contact-us-container">
+                <div class="left-content">
+                    <div class="book-now-container">
+                        <h3>Feel Free to Reach Us</h3>
+                        <a href="https://calendly.com/techilyfly" class="book-now-btn" target="_blank">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Book a Call
+                        </a>
+                    </div>
+                    <div class="socials">
+                        <a href="https://www.youtube.com/@techilyflybyig" target="_blank" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/techilyfly" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/techilyfly" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://linktr.ee/techilyfly" target="_blank" class="social-icon">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                        <div class="email-group">
+                            <a href="mailto:techilyfly@gmail.com" class="social-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>techilyfly@gmail.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <form id="gform" class="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required />
+                        <input type="text" name="phone" placeholder="Your Contact/WhatsApp Number" required />
+                        <input type="email" name="email" placeholder="Your Email" required />
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="container">
+                <p>&copy; 2025 Techily Fly. All rights reserved.</p>
+                <a href="https://TechilyFly.com/">Designed and Developed by Techily Fly</a>
+            </div>
+        </footer>
+    </main>
+    <script src="../smtpjs.com/v3/smtp.js"></script>
+    <script src="index.js"></script>
+    <script src="script.html"></script>
+    <script>
+    </script>
+    <button id="scrollUpBtn" style="display: none;">↑</button>
+</body>
+
+</html>
