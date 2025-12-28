@@ -1,1157 +1,900 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techily Fly - Creative Content Agency</title>
-    <meta name="description" content="Professional content creation services for brands that want to stand out">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary: #C3A984;
-            --primary-dark: #b39876;
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --light: #f8f9fa;
-            --gray: #2d2d2d;
-            --light-gray: #3d3d3d;
-            --text: rgba(255, 255, 255, 0.87);
-            --text-light: rgba(255, 255, 255, 0.6);
-            --transition: all 0.3s ease;
-            --radius: 8px;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --max-width: 1200px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--light);
-        }
-
-        p {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-gradient {
-            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--gray);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-header {
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary);
-        }
-
-        .section-subtitle {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius);
-            font-weight: 600;
-            text-align: center;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--darker);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(195, 169, 132, 0.4);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary);
-            color: var(--darker);
-            transform: translateY(-3px);
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(18, 18, 18, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--light-gray);
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 40px;
-            transition: var(--transition);
-        }
-
-        .logo:hover img {
-            opacity: 0.9;
-        }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            width: 30px;
-            height: 24px;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .nav-toggle span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: var(--light);
-            transition: var(--transition);
-            transform-origin: left;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-list {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta .btn {
-            padding: 0.5rem 1rem;
-        }
-
-        .hero {
-            padding: 8rem 0 4rem;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: var(--text-light);
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-media {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .services-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .service-card {
-            text-align: center;
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(195, 169, 132, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-features {
-            text-align: left;
-            margin-top: 1.5rem;
-        }
-
-        .service-features li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
-
-        .service-features li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-
-        .work-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .work-card {
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .work-video {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .work-video iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .work-info {
-            padding: 1.5rem;
-        }
-
-        .work-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .work-category {
-            color: var(--primary);
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .testimonials-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .testimonial-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .testimonial-content {
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: var(--text-light);
-        }
-
-        .testimonial-author h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .testimonial-author span {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .contact-grid {
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        .contact-methods {
-            margin-top: 2rem;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-method i {
-            color: var(--primary);
-            font-size: 1.25rem;
-            margin-top: 0.25rem;
-        }
-
-        .contact-method h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-method a {
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-
-        .contact-method a:hover {
-            color: var(--primary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background-color: var(--gray);
-            color: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary);
-            color: var(--darker);
-            transform: translateY(-3px);
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background-color: var(--gray);
-            border: 1px solid var(--light-gray);
-            border-radius: var(--radius);
-            color: var(--text);
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(195, 169, 132, 0.2);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .footer {
-            background-color: var(--darker);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-brand p {
-            margin-top: 1rem;
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .footer-column h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--light);
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column ul li a {
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--gray);
-            padding-top: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
-        }
-
-        .footer-bottom p {
-            font-size: 0.9rem;
-        }
-
-        .footer-legal {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .footer-legal a {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-
-        .footer-legal a:hover {
-            color: var(--primary);
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: var(--darker);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            z-index: 999;
-        }
-
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .back-to-top:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 768px) {
-            .nav-toggle {
-                display: flex;
-            }
-            
-            .nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background-color: var(--darker);
-                flex-direction: column;
-                justify-content: center;
-                transition: var(--transition);
-                z-index: 1000;
-            }
-            
-            .nav.active {
-                right: 0;
-            }
-            
-            .nav-list {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 2rem;
-                gap: 1.5rem;
-            }
-            
-            .nav-cta {
-                margin-top: 1rem;
-            }
-            
-            .hero {
-                padding: 6rem 0 2rem;
-            }
-            
-            .hero-title {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Techily Fly - Professional Digital Services | Create. Edit. Impact.
+      Repeat.
+    </title>
+    <meta
+      name="description"
+      content="Techily Fly offers professional filming services, digital marketing, and AI automation solutions. Innovation, Integrity & Intelligence — The Halal Way to Grow Online."
+    />
+    <meta
+      name="keywords"
+      content="digital marketing, video editing, AI automation, web development, filming services, halal business solutions"
+    />
+    <meta
+      name="author"
+      content="Techily Fly by AbdurRahman Ibn Ghufran (https://ibnghufran.com)"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Techily Fly - Professional Digital Services"
+    />
+    <meta
+      property="og:description"
+      content="Innovation, Integrity & Intelligence — The Halal Way to Grow Online"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://techilyfly.com" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+  </head>
+  <body>
+    <!-- Background Animation Canvas -->
+    <canvas id="background-canvas"></canvas>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Innovation, Integrity & Iman</h1>
+            <h2
+              style="
+                color: var(--cyber-purple);
                 font-size: 2rem;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+                margin-bottom: 1rem;
+              "
+            >
+              The Halal Way to Grow Online
+            </h2>
+            <p>
+              Empowering Businesses with Smart Digital Solutions — from stunning
+              websites and powerful marketing to AI-driven growth and
+              professional video editing. Grow your business ethically, smartly,
+              and successfully under Islamic principles.
+            </p>
 
-        @media (min-width: 992px) {
-            .contact-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr 2fr;
-            }
-        }
+            <div
+              style="
+                background: rgba(0, 191, 255, 0.1);
+                border-left: 4px solid var(--electric-blue);
+                padding: 1rem;
+                margin: 1.5rem 0;
+                border-radius: 8px;
+              "
+            >
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--cyber-purple);
+                  font-weight: 600;
+                  margin: 0;
+                "
+              >
+                "Indeed, Allah does not change the condition of a people until
+                they change what is in themselves."
+              </p>
+              <p style="font-size: 0.9rem; color: #666; margin: 0.25rem 0 0 0">
+                - Quran 13:11
+              </p>
+            </div>
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease forwards;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/63b3edb6768073d9d26513b3/0x0.png" alt="Techily Fly" width="120" height="40">
-            </a>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <nav class="nav" id="nav">
-                <ul class="nav-list">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#work" class="nav-link">Work</a></li>
-                    <li><a href="#testimonials" class="nav-link">Clients</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li class="nav-cta"><a href="https://calendly.com/techilyfly" class="btn btn-primary" target="_blank">Get Started</a></li>
-                </ul>
-            </nav>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn-primary"
+                >Start Your Halal Journey</a
+              >
+              <a href="#services" class="btn-secondary">Explore Services</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="floating-cards">
+              <div class="card">
+                <h4>🎬 Filming & VFX</h4>
+                <p>Cinematic visuals crafted with excellence</p>
+              </div>
+              <div class="card">
+                <h4>📈 Digital Marketing</h4>
+                <p>Smart, result-driven growth strategies</p>
+              </div>
+              <div class="card">
+                <h4>🤖 AI & Automation</h4>
+                <p>Smart tools for business efficiency</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        <span class="text-gradient">Content That</span>
-                        <span class="typing" id="typeText"></span>
-                    </h1>
-                    <p class="hero-subtitle">We craft compelling visual stories that elevate brands and drive engagement</p>
-                    <div class="hero-cta">
-                        <a href="#work" class="btn btn-primary">View Work</a>
-                        <a href="https://calendly.com/techilyfly" class="btn btn-secondary" target="_blank">Book a Call</a>
-                    </div>
-                </div>
-                <div class="hero-media">
-                    <div class="video-container">
-                        <iframe id="promoVideo" src="https://www.youtube.com/embed/zVpXHSSgeq4?autoplay=1&mute=1&loop=1&playlist=zVpXHSSgeq4&controls=0&playsinline=1&rel=0" loading="lazy" title="Techily Fly Showreel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="section services" id="services">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">What We Offer</span>
-                    <h2 class="section-title">Our Services</h2>
-                </div>
-
-                <div class="grid services-grid">
-                    <div class="card service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-film" aria-hidden="true"></i>
-                        </div>
-                        <h3>Video Production</h3>
-                        <p>From concept to final edit, we create captivating videos that tell your brand's story.</p>
-                        <ul class="service-features">
-                            <li>Cinematic storytelling</li>
-                            <li>Professional editing</li>
-                            <li>Motion graphics</li>
-                        </ul>
-                    </div>
-
-                    <div class="card service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-bullhorn" aria-hidden="true"></i>
-                        </div>
-                        <h3>Content Strategy</h3>
-                        <p>Data-driven strategies to maximize your content's reach and engagement.</p>
-                        <ul class="service-features">
-                            <li>Audience analysis</li>
-                            <li>Content planning</li>
-                            <li>Performance tracking</li>
-                        </ul>
-                    </div>
-
-                    <div class="card service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-paint-brush" aria-hidden="true"></i>
-                        </div>
-                        <h3>Graphic Design</h3>
-                        <p>Visually stunning designs that capture attention and communicate effectively.</p>
-                        <ul class="service-features">
-                            <li>Brand identity</li>
-                            <li>Social media assets</li>
-                            <li>Marketing collateral</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Section -->
-        <section class="section work" id="work">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Our Portfolio</span>
-                    <h2 class="section-title">Featured Work</h2>
-                </div>
-
-                <div class="grid work-grid">
-                    <div class="work-card">
-                        <div class="work-video">
-                            <iframe id="player1" src="https://www.youtube.com/embed/FF1jFC91pj4?rel=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="work-info">
-                            <h3>Brand Campaign Video</h3>
-                            <span class="work-category">Video Production</span>
-                        </div>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-video">
-                            <iframe id="player2" src="https://www.youtube.com/embed/JaCAoYOrgZo?rel=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="work-info">
-                            <h3>Product Launch</h3>
-                            <span class="work-category">Content Strategy</span>
-                        </div>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-video">
-                            <iframe id="player3" src="https://www.youtube.com/embed/_VPtCyKtajE?rel=0&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="work-info">
-                            <h3>Social Media Series</h3>
-                            <span class="work-category">Video Production</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <a href="https://www.youtube.com/@techilyflybyig/featured" class="btn btn-primary" target="_blank">View More Projects</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="section testimonials" id="testimonials">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Client Feedback</span>
-                    <h2 class="section-title">What Our Clients Say</h2>
-                </div>
-
-                <div class="grid testimonials-grid">
-                    <div class="card testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="testimonial-text">Techily Fly transformed our brand's visual identity with their exceptional video content. Their attention to detail and creative approach exceeded our expectations.</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Abhishek</h4>
-                            <span>Founder, JustPrem Sangha</span>
-                        </div>
-                    </div>
-
-                    <div class="card testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="testimonial-text">Working with Techily Fly has been a game-changer for our social media presence. Their content consistently performs above industry benchmarks.</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Harry Ranveer</h4>
-                            <span>CEO, Videopreneur</span>
-                        </div>
-                    </div>
-
-                    <div class="card testimonial-card">
-                        <div class="testimonial-content">
-                            <p class="testimonial-text">The team at Techily Fly understands our vision perfectly. They deliver high-quality work on time, every time. Highly recommended for any creative needs.</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <h4>Vir</h4>
-                            <span>Founder, Leap Media</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section contact" id="contact">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="section-header">
-                            <span class="section-subtitle">Get In Touch</span>
-                            <h2 class="section-title">Let's Create Something Amazing</h2>
-                        </div>
-
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <i class="fas fa-envelope" aria-hidden="true"></i>
-                                <div>
-                                    <h4>Email Us</h4>
-                                    <a href="mailto:techilyfly@gmail.com">techilyfly@gmail.com</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-method">
-                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                                <div>
-                                    <h4>Call Us</h4>
-                                    <a href="tel:+918825164657">+91 8825164657</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-method">
-                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                                <div>
-                                    <h4>Book a Call</h4>
-                                    <a href="https://calendly.com/techilyfly" target="_blank">Schedule a consultation</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="social-links">
-                            <a href="https://www.youtube.com/@techilyflybyig" target="_blank" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="https://www.instagram.com/techilyfly" target="_blank" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/techilyfly" target="_blank" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="contact-form-container">
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" required placeholder="Your Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" required placeholder="Your Email">
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" id="phone" name="phone" placeholder="Phone Number">
-                            </div>
-                            <div class="form-group">
-                                <textarea id="message" name="message" required placeholder="Tell us about your project"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="footer-logo">
-                        <img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/63b3edb6768073d9d26513b3/0x0.png" alt="Techily Fly" width="120" height="40">
-                    </a>
-                    <p>Creating content that sells and scales for ambitious brands.</p>
-                </div>
-
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#work">Portfolio</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#">Video Production</a></li>
-                            <li><a href="#">Content Strategy</a></li>
-                            <li><a href="#">Graphic Design</a></li>
-                            <li><a href="#">Social Media</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Techily Fly. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Techily Fly</h2>
+          <p>Creating Digital Excellence with Purpose and Integrity</p>
         </div>
-    </footer>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>We Blend Creativity with Islamic Values</h3>
+            <p>
+              At Techily Fly, we believe in the power of innovation combined
+              with unwavering Islamic integrity. Founded by AbdurRahman Ibn
+              Ghufran, our mission is to provide exceptional digital services
+              that not only deliver results but uphold the highest ethical
+              standards guided by Islamic principles.
+            </p>
+            <p>
+              Our halal approach ensures that every project we undertake
+              reflects our commitment to honesty, excellence, and faith. We
+              combine cutting-edge technology with creative excellence to build
+              your online success while maintaining complete adherence to
+              Islamic values in all our business dealings.
+            </p>
+
+            <div
+              style="
+                background: var(--gradient);
+                color: white;
+                padding: 1.5rem;
+                border-radius: 12px;
+                margin: 2rem 0;
+              "
+            >
+              <p style="font-style: italic; font-size: 1.1rem; margin: 0">
+                "And say, 'Do good, for Allah will surely see your deeds.'"
+              </p>
+              <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0; opacity: 0.9">
+                - Quran 22:77
+              </p>
+            </div>
+            <div class="about-features">
+              <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <div>
+                  <h4>Mission-Driven</h4>
+                  <p>Halal business practices with ethical excellence</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🚀</div>
+                <div>
+                  <h4>Results-Oriented</h4>
+                  <p>Data-driven strategies for measurable growth</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">💡</div>
+                <div>
+                  <h4>Innovation-First</h4>
+                  <p>Latest technology with creative excellence</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🤝</div>
+                <div>
+                  <h4>Client-Centric</h4>
+                  <p>Personalized solutions for unique needs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-visual">
+            <div
+              style="
+                background: linear-gradient(135deg, #00bfff, #8a2be2);
+                border-radius: 20px;
+                padding: 3rem;
+                color: white;
+                text-align: center;
+              "
+            >
+              <h3 class="about-h3">
+                Create. Edit. Impact. Repeat.
+              </h3>
+              <p style="font-size: 1.2rem; opacity: 0.9">
+                This isn't just our tagline — it's our philosophy. Every project
+                is an opportunity to create something extraordinary, edit it to
+                perfection, make a lasting impact, and repeat the cycle of
+                excellence.
+              </p>
+              <div
+                style="
+                  margin-top: 2rem;
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 1rem;
+                  text-align: left;
+                "
+              >
+                <div>
+                  <h4>📊 500+ Projects</h4>
+                  <p style="opacity: 0.8">Successfully delivered</p>
+                </div>
+                <div>
+                  <h4>😊 200+ Happy Clients</h4>
+                  <p style="opacity: 0.8">Across various industries</p>
+                </div>
+                <div>
+                  <h4>⭐ 5-Star Rating</h4>
+                  <p style="opacity: 0.8">Consistent quality delivery</p>
+                </div>
+                <div>
+                  <h4>🏆 Award Winning</h4>
+                  <p style="opacity: 0.8">Recognized excellence</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Premium Services</h2>
+          <p>Comprehensive Digital Solutions for Your Business Growth</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🎬</div>
+            <h3>Filming Services & Visual Effects</h3>
+            <p>
+              Cinematic visuals, creative storytelling — crafted with excellence
+              and 100% halal creativity. From concept to final cut, we bring
+              your vision to life with stunning visual effects and professional
+              editing.
+            </p>
+            <div class="service-price">Starts from ₹20,000</div>
+            <ul style="text-align: left; color: #666; margin-top: 1rem">
+              <li>Professional Video Production</li>
+              <li>Cinematic Visual Effects</li>
+              <li>Post-Production & Editing</li>
+              <li>Color Grading & Sound Design</li>
+              <li>Commercial & Ad Films</li>
+            </ul>
+            <a
+              href="#contact"
+              class="cta-button"
+              style="margin-top: 1rem; display: inline-block"
+              >Contact Now</a
+            >
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📈</div>
+            <h3>Digital Marketing</h3>
+            <p>
+              Grow your brand with smart, halal, and result-driven marketing —
+              reach the right audience with real impact. We create strategies
+              that convert and campaigns that resonate.
+            </p>
+            <div class="service-price">Starts from ₹20,000</div>
+            <ul style="text-align: left; color: #666; margin-top: 1rem">
+              <li>Social Media Marketing</li>
+              <li>Search Engine Optimization (SEO)</li>
+              <li>Content Marketing Strategy</li>
+              <li>Pay-Per-Click Advertising</li>
+              <li>Email Marketing Campaigns</li>
+            </ul>
+            <a
+              href="#contact"
+              class="cta-button"
+              style="margin-top: 1rem; display: inline-block"
+              >Contact Now</a
+            >
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🤖</div>
+            <h3>AI & Automation Services</h3>
+            <p>
+              Boost your business with smart AI tools and automation — saving
+              time, increasing growth, and staying 100% halal. Transform your
+              operations with intelligent solutions.
+            </p>
+            <div class="service-price">Starts from ₹20,000</div>
+            <ul style="text-align: left; color: #666; margin-top: 1rem">
+              <li>AI-Powered Chatbots</li>
+              <li>Business Process Automation</li>
+              <li>Data Analytics & Insights</li>
+              <li>Machine Learning Solutions</li>
+              <li>Custom AI Development</li>
+            </ul>
+            <a
+              href="#contact"
+              class="cta-button"
+              style="margin-top: 1rem; display: inline-block"
+              >Contact Now</a
+            >
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>Website Development</h3>
+            <p>
+              Stunning, responsive websites that convert visitors into
+              customers. We create beautiful, functional websites that represent
+              your brand perfectly and drive business growth.
+            </p>
+            <div class="service-price">Starts from ₹15,000</div>
+            <ul style="text-align: left; color: #666; margin-top: 1rem">
+              <li>Responsive Web Design</li>
+              <li>E-Commerce Solutions</li>
+              <li>Custom Web Applications</li>
+              <li>Website Optimization</li>
+              <li>CMS Development</li>
+            </ul>
+            <a
+              href="#contact"
+              class="cta-button"
+              style="margin-top: 1rem; display: inline-block"
+              >Contact Now</a
+            >
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3>Mobile App Development</h3>
+            <p>
+              Native and cross-platform mobile applications that deliver
+              exceptional user experiences. From concept to deployment, we
+              create apps that engage and retain users.
+            </p>
+            <div class="service-price">Starts from ₹50,000</div>
+            <ul style="text-align: left; color: #666; margin-top: 1rem">
+              <li>iOS & Android Development</li>
+              <li>Cross-Platform Solutions</li>
+              <li>UI/UX Design</li>
+              <li>App Store Optimization</li>
+              <li>Maintenance & Support</li>
+            </ul>
+            <a
+              href="#contact"
+              class="cta-button"
+              style="margin-top: 1rem; display: inline-block"
+              >Contact Now</a
+            >
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Branding & Design</h3>
+            <p>
+              Complete branding solutions that make your business memorable.
+              From logo design to brand guidelines, we create visual identities
+              that resonate with your target audience.
+            </p>
+            <div class="service-price">Starts from ₹10,000</div>
+            <ul style="text-align: left; color: #666; margin-top: 1rem">
+              <li>Logo Design & Identity</li>
+              <li>Brand Guidelines</li>
+              <li>Marketing Materials</li>
+              <li>UI/UX Design</li>
+              <li>Print Design Services</li>
+            </ul>
+            <a
+              href="#contact"
+              class="cta-button"
+              style="margin-top: 1rem; display: inline-block"
+              >Contact Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose" id="why-choose">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose Techily Fly</h2>
+          <p>Your Trusted Partner for Digital Excellence</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-icon">🌙</div>
+            <h3>100% Halal Business Practices</h3>
+            <p>
+              We conduct business with complete transparency and Islamic ethical
+              standards, ensuring all our services align with Quranic principles
+              and Sunnah values. Every transaction is conducted with honesty and
+              integrity.
+            </p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">⚡</div>
+            <h3>Lightning-Fast Delivery</h3>
+            <p>
+              Our streamlined processes and experienced team ensure quick
+              turnaround times without compromising on quality or attention to
+              detail.
+            </p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">💎</div>
+            <h3>Premium Quality</h3>
+            <p>
+              Every project is handled with meticulous care and attention to
+              detail, ensuring deliverables that exceed expectations and drive
+              results.
+            </p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🔧</div>
+            <h3>Custom Solutions</h3>
+            <p>
+              We don't believe in one-size-fits-all. Each solution is tailored
+              to your specific needs, goals, and budget for maximum impact.
+            </p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">📞</div>
+            <h3>24/7 Support</h3>
+            <p>
+              Our dedicated support team is always available to assist you,
+              ensuring smooth project execution and post-launch success.
+            </p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">📊</div>
+            <h3>Results-Driven Approach</h3>
+            <p>
+              We focus on measurable results and ROI, using data-driven
+              strategies to ensure your investment translates into tangible
+              business growth.
+            </p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🔄</div>
+            <h3>Continuous Improvement</h3>
+            <p>
+              We stay updated with the latest trends and technologies,
+              continuously evolving our services to deliver cutting-edge
+              solutions.
+            </p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🤝</div>
+            <h3>Long-Term Partnership</h3>
+            <p>
+              We view every client relationship as a long-term partnership,
+              committed to your growth and success beyond individual projects.
+            </p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🏆</div>
+            <h3>Proven Track Record</h3>
+            <p>
+              With hundreds of successful projects and satisfied clients, we
+              have a proven track record of delivering excellence consistently.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Let's Talk About Your Project</h2>
+          <p>
+            Share your vision — we'll turn it into reality with creativity,
+            strategy, and halal innovation
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Transform Your Business with Halal Excellence</h3>
+            <p>
+              Ready to elevate your digital presence? Our team combines
+              innovation with Islamic principles to deliver exceptional results
+              that align with your values.
+            </p>
+
+            <!-- Islamic Quotes Section -->
+            <div
+              style="
+                background: rgba(0, 191, 255, 0.1);
+                border-left: 4px solid var(--electric-blue);
+                padding: 1.5rem;
+                margin: 2rem 0;
+                border-radius: 8px;
+              "
+            >
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--cyber-purple);
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                "Indeed, Allah is with those who fear Him and those who are
+                doers of good."
+              </p>
+              <p style="font-size: 0.9rem; color: #666; margin: 0">
+                - Quran 16:128
+              </p>
+            </div>
+
+            <div
+              style="
+                background: rgba(138, 43, 226, 0.1);
+                border-left: 4px solid var(--cyber-purple);
+                padding: 1.5rem;
+                margin: 2rem 0;
+                border-radius: 8px;
+              "
+            >
+              <p
+                style="
+                  font-style: italic;
+                  color: var(--electric-blue);
+                  font-weight: 600;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                "The believers are those who are truthful and honest in their
+                business dealings."
+              </p>
+              <p style="font-size: 0.9rem; color: #666; margin: 0">
+                - Sahih Bukhari
+              </p>
+            </div>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div>
+                  <strong>Phone/WhatsApp</strong><br />
+                  <a
+                    href="tel:+918825164657"
+                    style="color: var(--black); text-decoration: none"
+                    >+91 88251 64657</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <strong>Email</strong><br />
+                  <a
+                    href="mailto:TechilyFly@gmail.com"
+                    style="color: var(--black); text-decoration: none"
+                    >TechilyFly@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <strong>Address</strong><br />
+                  Ward No. 07, Lahsaniya, Khoripakar,<br />
+                  Dewapur, Pachpakari, Patahi, Dhaka,<br />
+                  Motihari, East Champaran, Bihar, India - 845427
+                </div>
+              </div>
+            </div>
+
+            <h4 style="margin-bottom: 1rem; color: var(--black)">
+              Connect With Us
+            </h4>
+
+            <!-- Social Media Link and Icons New-->
+            <div class="social-links">
+              <a
+                href="https://wa.me/918825164657"
+                target="_blank"
+                title="WhatsApp"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/whatsapp/25D366"
+                  alt="WhatsApp"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="mailto:TechilyFly@gmail.com"
+                target="_blank"
+                title="Email"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/gmail/EA4335"
+                  alt="Email"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="https://www.youtube.com/channel/UCrQ9tWwT5vs5Dn4eGRbjnsA?sub_confirmation=1"
+                target="_blank"
+                title="YouTube"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/youtube/FF0000"
+                  alt="YouTube"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="https://www.instagram.com/TechilyFly"
+                target="_blank"
+                title="Instagram"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/instagram/E4405F"
+                  alt="Instagram"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="https://www.facebook.com/TechilyFly"
+                target="_blank"
+                title="Facebook"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/facebook/1877F2"
+                  alt="Facebook"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/TechilyFly"
+                target="_blank"
+                title="LinkedIn"
+                class="social-link"
+              >
+                <img
+                  src="https://api.iconify.design/mdi:linkedin.svg?color=%230A66C2"
+                  alt="LinkedIn"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="https://twitter.com/TechilyFly"
+                target="_blank"
+                title="Twitter/X"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/x/000000"
+                  alt="Twitter X"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="https://t.me/techilyfly"
+                target="_blank"
+                title="Telegram"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/telegram/26A5E4"
+                  alt="Telegram"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="https://github.com/techilyfly"
+                target="_blank"
+                title="GitHub"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/github/000000"
+                  alt="GitHub"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a
+                href="https://linktr.ee/techilyfly"
+                target="_blank"
+                title="Linktree"
+                class="social-link"
+              >
+                <img
+                  src="https://cdn.simpleicons.org/linktree/39E75F"
+                  alt="Linktree"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+            </div>
+
+            <!-- Social Media Link and Icons Old-->
+            <!-- <div class="social-links">
+                        <a href="https://wa.me/918825164657" target="_blank" class="social-link" title="WhatsApp">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:TechilyFly@gmail.com" target="_blank" class="social-link" title="Email">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCrQ9tWwT5vs5Dn4eGRbjnsA?sub_confirmation=1" target="_blank" class="social-link" title="YouTube">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/TechilyFly" target="_blank" class="social-link" title="Instagram">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/TechilyFly" target="_blank" class="social-link" title="Facebook">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/TechilyFly" target="_blank" class="social-link" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/TechilyFly" target="_blank" class="social-link" title="Twitter/X">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/techilyfly" target="_blank" class="social-link" title="Telegram">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/techilyfly" target="_blank" class="social-link" title="GitHub">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linktr.ee/techilyfly" target="_blank" class="social-link" title="Linktree">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+                            </svg>
+                        </a>
+                    </div> -->
+          </div>
+          <div class="contact-form">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="full-name">Full Name *</label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full-name"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="whatsapp">WhatsApp Number *</label>
+                <input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  placeholder="+91 88251 64657"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="company">Company / Brand Name</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your company or brand name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="service">Service Interested In *</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="Filming Services & Visual Effects">
+                    Filming Services & Visual Effects
+                  </option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="AI & Automation Services">
+                    AI & Automation Services
+                  </option>
+                  <option value="Website Development">
+                    Website Development
+                  </option>
+                  <option value="Mobile App Development">
+                    Mobile App Development
+                  </option>
+                  <option value="Branding & Design">Branding & Design</option>
+                  <option value="Multiple Services">Multiple Services</option>
+                  <option value="Custom Solution">Custom Solution</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="budget">Budget Range *</label>
+                <select id="budget" name="budget" required>
+                  <option value="">Select budget range</option>
+                  <option value="Under ₹20,000">Under ₹20,000</option>
+                  <option value="₹20,000 - ₹50,000">₹20,000 - ₹50,000</option>
+                  <option value="₹50,000 - ₹1,00,000">
+                    ₹50,000 - ₹1,00,000
+                  </option>
+                  <option value="₹1,00,000 - ₹5,00,000">
+                    ₹1,00,000 - ₹5,00,000
+                  </option>
+                  <option value="₹5,00,000 - ₹10,00,000">
+                    ₹5,00,000 - ₹10,00,000
+                  </option>
+                  <option value="Above ₹10,00,000">Above ₹10,00,000</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="description">Project Description *</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  rows="4"
+                  placeholder="Tell us about your project, goals, and requirements..."
+                  required
+                ></textarea>
+              </div>
+              <div class="contact-buttons">
+                <button type="button" id="whatsapp-btn" class="btn-whatsapp">
+                  📱 Send via WhatsApp
+                </button>
+                <button type="button" id="email-btn" class="btn-email">
+                  ✉️ Send via Email
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 
     <!-- Back to Top Button -->
-    <a href="#home" id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <a href="#" class="back-to-top" title="Back to top">↑</a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Navigation Toggle
-            const navToggle = document.getElementById('navToggle');
-            const nav = document.getElementById('nav');
-            
-            navToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                nav.classList.toggle('active');
-            });
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    navToggle.classList.remove('active');
-                    nav.classList.remove('active');
-                });
-            });
-
-            // Typing Animation
-            const typeText = document.getElementById('typeText');
-            const phrases = ["Sells", "Engages", "Converts", "Scales"];
-            let currentPhrase = 0;
-            let currentLetter = 0;
-            let isDeleting = false;
-            let typingSpeed = 150;
-            
-            function typeWriter() {
-                const fullTxt = phrases[currentPhrase];
-                
-                if (isDeleting) {
-                    typeText.textContent = fullTxt.substring(0, currentLetter - 1);
-                    currentLetter--;
-                    typingSpeed = 50;
-                } else {
-                    typeText.textContent = fullTxt.substring(0, currentLetter + 1);
-                    currentLetter++;
-                    typingSpeed = 150;
-                }
-                
-                if (!isDeleting && currentLetter === fullTxt.length) {
-                    isDeleting = true;
-                    typingSpeed = 1000;
-                } else if (isDeleting && currentLetter === 0) {
-                    isDeleting = false;
-                    currentPhrase = (currentPhrase + 1) % phrases.length;
-                    typingSpeed = 500;
-                }
-                
-                setTimeout(typeWriter, typingSpeed);
-            }
-            
-            // Start typing animation after 1 second
-            setTimeout(typeWriter, 1000);
-
-            // Back to Top Button
-            const backToTop = document.getElementById('backToTop');
-            
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTop.classList.add('active');
-                } else {
-                    backToTop.classList.remove('active');
-                }
-            });
-
-            // Form Submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(this);
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbw1b_cjnWpdbfqms57A6m9azPkA9vKMMu5P4e6jWlhfeNPI4qrk3-U6rLVlhhYHw5LD/exec';
-                    
-                    fetch(scriptURL, {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => {
-                        alert('Thank you! Your message has been sent successfully.');
-                        contactForm.reset();
-                    })
-                    .catch(error => {
-                        console.error('Error!', error.message);
-                        alert('There was an error. Please try again later.');
-                    });
-                });
-            }
-
-            // YouTube Player API
-            var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-            var players = [];
-            
-            window.onYouTubeIframeAPIReady = function() {
-                var iframes = document.querySelectorAll('.work-video iframe');
-                
-                iframes.forEach(function(iframe, index) {
-                    // Add ID if not exists
-                    if (!iframe.id) {
-                        iframe.id = 'player' + (index + 1);
-                    }
-                    
-                    players[index] = new YT.Player(iframe.id, {
-                        events: {
-                            'onStateChange': onPlayerStateChange
-                        }
-                    });
-                });
-            };
-            
-            function onPlayerStateChange(event) {
-                if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
-                    // Force related videos to be from same channel
-                    event.target.setOption('rel', 0);
-                    
-                    // Alternative method - reload with rel=0 parameter
-                    // var iframe = document.getElementById(event.target.a.id);
-                    // var src = iframe.src;
-                    // if (src.indexOf('rel=0') === -1) {
-                    //     iframe.src = src + (src.indexOf('?') === -1 ? '?' : '&') + 'rel=0';
-                    // }
-                }
-            }
-
-            // Animate elements when they come into view
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.card, .section-header');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.2;
-                    
-                    if (elementPosition < screenPosition) {
-                        element.classList.add('fade-in');
-                    }
-                });
-            };
-            
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Run once on load
-        });
-    </script>
-</body>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
 </html>
